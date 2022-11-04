@@ -154,7 +154,9 @@ def run(
                 # Print results
                 for c in det[:, 5].unique():
                     n = (det[:, 5] == c).sum()  # detections per class
-                    s += f"{n} {names[int(c)]}{'s' * (n > 1)}, "  # add to string
+                    s = f"{n}" # add to string
+                    cv2.putText(im0, "Numero de Arvores Contadas:" + str(s), (60, 160), 0, 4, (255,0,0), 6)
+
 
                 # Write results
                 for *xyxy, conf, cls in reversed(det):
