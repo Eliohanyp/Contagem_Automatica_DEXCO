@@ -48,7 +48,7 @@ class Criar_CV:
             df = df.loc[:, ['Calculo']]
             df = df.iloc[[0]]
 
-            nome_arquivo = str(lista_arquivos_txt[i]).split('.txt')[0].split('\\')[-1:][0]
+            nome_arquivo = str(lista_arquivos_txt[i]).split('.txt')[0].split('/')[-1:][0]
             df.to_csv(saida_pasta+'/CV_%(nomes_arquivo)s.txt'%{'nomes_arquivo': nome_arquivo}, index=False)
         print('Código Executado com Sucesso!!!')
         sleep(1)
